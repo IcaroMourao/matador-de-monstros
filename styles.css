@@ -1,0 +1,191 @@
+body {
+  background-color: #323232;
+  font-size: 16px;
+  overflow-x: hidden;
+  font-family: Helvetica, sans-serif;
+}
+
+#app {
+  background-color: #323232;
+  width: 100%;
+  height: 100%;
+}
+
+.players-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #4D4D4D;
+  margin: .5rem;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,.16);
+  border-radius: .4rem;
+}
+
+.player-container {
+  width: 50%;
+  text-align: center;
+  padding: 1rem;
+}
+
+.player-name {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.life-bar-container {
+  width: 85%;
+  height: 25px;
+  border: 1px solid #5D5D5D;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,.16);
+  margin: auto;
+}
+
+.life-bar {
+  height: 100%;
+  background-color: #56a156;
+}
+
+.low-life {
+  background-color: #c24945;
+}
+
+.life-percentual {
+  color: #C3C3C3;
+  margin: .3rem 0;
+}
+
+.finished-game-container {
+  background-color: #4D4D4D;
+  margin: .5rem;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,.16);
+  border-radius: .4rem;
+  padding: 1rem;
+}
+
+.finished-item {
+  padding: .3rem;
+  margin: 0;
+  text-align: center;
+}
+
+.player-victory {
+  display: grid;
+  color: #5cb85c;
+}
+
+.congrats {
+  text-transform: uppercase;
+  padding-bottom: .5rem;
+}
+
+.monster-victory {
+  color: #d9534f;
+}
+
+.buttons-container {
+  background-color: #4D4D4D;
+  margin: .5rem;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,.16);
+  border-radius: .4rem;
+  padding: 1rem;
+}
+
+.button-group-1 {
+  width: 100%;
+  text-align: center;
+}
+
+.button-group-2 {
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+  margin: auto;
+}
+
+.button {
+  border: none;
+  height: 30px;
+  border-radius: .3rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,.16);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.start-button {
+  background-color: #5cb85c;
+}
+
+.start-button {
+  background-color: #50a150;
+}
+
+.attack-button {
+  background-color: #d9534f;
+}
+
+.attack-button:hover{
+  background-color: #c24945;
+}
+
+.special-attack-button {
+  background-color: #f0ad4e;
+}
+
+.special-attack-button:hover{
+  background-color: #db9e48;
+}
+
+.heal-button {
+  background-color: #5bc0de;
+}
+
+.heal-button:hover {
+  background-color: #52adc9;
+}
+
+.give-up-button {
+  background-color: #f7f7f7;
+  color: #323232;
+}
+
+.give-up-button:hover {
+  background-color: #dddddd;
+  color: #323232;
+}
+
+.logs-container {
+  display: block;
+  background-color: #4D4D4D;
+  margin: .5rem;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,.16);
+  border-radius: .4rem;
+  padding: 1rem;
+}
+
+.log-item {
+  display: block;
+  width: 100%;
+  margin: auto;
+  border-radius: .3rem;
+}
+
+.log-item-player {
+  background-color: #6092ca;
+}
+
+.log-item-player-heal {
+  background-color: #86d486;
+}
+
+.log-item-monster {
+  background-color: #f36d52;
+}
+
+.log-item-description {
+  padding: .3rem;
+  margin: .5rem 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+}

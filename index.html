@@ -1,0 +1,104 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<link rel="stylesheet" href="styles.css">
+
+<div id="app">
+  <div class="players-container">
+    <div class="player-container">
+      <p class="player-name">
+        {{ playerName }}
+      </p>
+      <div class="life-bar-container">
+        <div
+          class="life-bar"
+          :class="{'low-life': playerLife <= 25}"
+          :style="{width: `${playerLife}%`}"></div>
+      </div>
+      <p class="life-percentual">
+        {{ `${playerLife}%` }}
+      </p>
+    </div>
+    <div class="player-container">
+      <p class="player-name">
+        {{ monsterName }}
+      </p>
+      <div class="life-bar-container">
+        <div
+          class="life-bar"
+          :class="{'low-life': monsterLife <= 25}"
+          :style="{width: `${monsterLife}%`}"></div>
+      </div>
+      <p class="life-percentual">
+        {{ `${monsterLife}%` }}
+      </p>
+    </div>
+  </div>
+  <div
+    v-if="monsterLife === 0 || playerLife === 0"
+    class="finished-game-container"
+  >
+    <div v-if="monsterLife === 0" class="finished-item player-victory">
+      <span class="congrats"> Parabéns!!! </span>
+      <span> Você derrotou o monstro. </span>
+    </div>
+    <p v-if="playerLife === 0" class="finished-item monster-victory">
+      Você perdeu! :(
+    </p>
+  </div>
+  <div class="buttons-container">
+    <div
+    v-if="start || monsterLife === 0 || playerLife === 0"
+    class="button-group-1">
+      <button
+        @click="startGame"
+        class="button start-button">
+          Iniciar novo jogo
+      </button>
+    </div>
+    <div v-else class="button-group-2">
+      <button
+        @click="attack(false)"
+        class="button attack-button">
+          Atacar
+      </button>
+      <button
+        @click="specialAttack"
+        class="button special-attack-button">
+          Ataque especial
+      </button>
+      <button
+        @click="heal"
+        class="button
+        heal-button">
+          Curar
+        </button>
+      <button
+        @click="giveUp"
+        class="button give-up-button">
+          Desistir
+      </button>
+    </div>
+  </div>
+  <div v-show="logs.length > 0" class="logs-container">
+    <div
+      v-for="(item, key, index) in logs"
+      :key="index"
+      :class="{
+        'log-item-player': item.playerAttack,
+        'log-item-monster': item.monsterAttack,
+        'log-item-player-heal': item.isHeal
+      }"
+      class="log-item">
+      <p v-if="item.playerAttack" class="log-item-description">
+        {{ `Jogador atingiu monstro com ${item.demage}.` }}
+      </p>
+      <p v-else-if="item.isHeal" class="log-item-description">
+        {{ `Jogador se recupreou em ${item.heal}.` }}
+      </p>
+      <p v-else class="log-item-description">
+        {{ `Monstro atingiu jogador com ${item.demage}.` }}
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
